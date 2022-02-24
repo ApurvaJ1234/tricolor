@@ -40,13 +40,10 @@ class ViewController: UIViewController {
         //imageView.contentMode = .scaleAspectFit
                
         let circle = UIBezierPath(arcCenter: CGPoint(x: 250, y: 175), radius: CGFloat(23), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
-            
         let shape = CAShapeLayer()
         shape.path = circle.cgPath
-        
         shape.fillColor = UIColor.blue.cgColor
 
-        view.layer.addSublayer(shape)
         
         
         
@@ -66,6 +63,7 @@ class ViewController: UIViewController {
         view.addSubview(myView5)
         view.addSubview(myView6)
         //self.view.addSubview(imageView)
+        view.layer.addSublayer(shape)
     }
 
 
