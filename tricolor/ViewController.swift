@@ -19,8 +19,8 @@ class ViewController: UIViewController {
         let frame1 = CGRect(x: 150, y: 100, width: 200, height: 50)
         let myView1 = UIView(frame: frame1)
 
-        let frame2 = CGRect(x:150, y:150, width: 200, height: 50)
-        let myView2 = UIView(frame: frame2)
+        //let frame2 = CGRect(x:150, y:150, width: 200, height: 50)
+        //let myView2 = UIView(frame: frame2)
         
         let frame3 = CGRect(x:150, y:200, width: 200, height: 50)
         let myView3 = UIView(frame: frame3)
@@ -34,13 +34,24 @@ class ViewController: UIViewController {
         let frame6 = CGRect(x:25, y:580, width: 250, height: 30)
         let myView6 = UIView(frame: frame6)
         
-        let imageView = UIImageView()
-        imageView.frame = CGRect(x: 225, y: 150, width: 50, height: 50)
-        imageView.image = UIImage(named: "ashoka")
-        imageView.contentMode = .scaleAspectFit
+        //let imageView = UIImageView()
+        //imageView.frame = CGRect(x: 225, y: 150, width: 50, height: 50)
+        //imageView.image = UIImage(named: "ashoka")
+        //imageView.contentMode = .scaleAspectFit
                
+        let circle = UIBezierPath(arcCenter: CGPoint(x: 250, y: 175), radius: CGFloat(23), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+            
+        let shape = CAShapeLayer()
+        shape.path = circle.cgPath
+        
+        shape.fillColor = UIColor.blue.cgColor
+
+        view.layer.addSublayer(shape)
+        
+        
+        
         myView1.backgroundColor = .orange
-        myView2.backgroundColor = .white
+        //myView2.backgroundColor = .white
         myView3.backgroundColor = .green
         myView4.backgroundColor = .black
         myView5.backgroundColor = .black
@@ -49,12 +60,12 @@ class ViewController: UIViewController {
         
         self.view.addSubview(label)
         view.addSubview(myView1)
-        view.addSubview(myView2)
+        //view.addSubview(myView2)
         view.addSubview(myView3)
         view.addSubview(myView4)
         view.addSubview(myView5)
         view.addSubview(myView6)
-        self.view.addSubview(imageView)
+        //self.view.addSubview(imageView)
     }
 
 
